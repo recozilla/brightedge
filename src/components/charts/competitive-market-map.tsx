@@ -80,7 +80,7 @@ export const CompetitiveMarketMap: React.FC<CompetitiveMarketMapProps> = ({ data
           unit="%" 
           domain={[0, 35]}
           tickFormatter={(value) => `${value}%`}
-          label={{ value: 'LLM Citation Share (%)', angle: -90, position: 'insideLeft', dy: 20 }}
+          label={{ value: 'LLM Citation Share (%)', angle: -90, position: 'insideLeft', dy: 50 }}
           tick={{ fontSize: 12 }}
         />
         <ZAxis 
