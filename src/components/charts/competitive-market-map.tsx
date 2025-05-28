@@ -100,20 +100,22 @@ export const CompetitiveMarketMap: React.FC<CompetitiveMarketMapProps> = ({ data
         
         {/* Add company name labels */}
         {enhancedData.map((entry, index) => {
-          // Calculate position based on chart dimensions and scales
-          const chartWidth = 100; // percentage width of chart area
-          const chartHeight = 100; // percentage height of chart area
-          const xScale = chartWidth / 40; // 40 is the domain max for x-axis
-          const yScale = chartHeight / 35; // 35 is the domain max for y-axis
+          // More accurate positioning calculation
+          const margin = { top: 20, right: 30, bottom: 60, left: 40 };
+          const chartArea = {
+            width: 100 - ((margin.left + margin.right) / 4), // Approximate percentage
+            height: 100 - ((margin.top + margin.bottom) / 3.5) // Approximate percentage
+          };
           
-          const xPos = (entry.shareOfVoice * xScale) + 10; // 10% offset from left
-          const yPos = 90 - (entry.llmCitationShare * yScale); // 90% from top, inverted
+          // Calculate position based on data values and chart scales
+          const xPercent = ((entry.shareOfVoice / 40) * chartArea.width) + (margin.left / 4);
+          const yPercent = ((1 - (entry.llmCitationShare / 35)) * chartArea.height) + (margin.top / 3.5);
           
           return (
             <g key={`label-${index}`}>
               <text
-                x={`${xPos}%`}
-                y={`${yPos + 8}%`}
+                x={`${xPercent}%`}
+                y={`${yPercent + 5}%`}
                 textAnchor="middle"
                 fill={colorMap[entry.name] || "#71717a"}
                 fontSize={11}
