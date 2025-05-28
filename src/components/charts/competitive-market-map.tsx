@@ -80,7 +80,7 @@ export const CompetitiveMarketMap: React.FC<CompetitiveMarketMapProps> = ({ data
           unit="%" 
           domain={[0, 35]}
           tickFormatter={(value) => `${value}%`}
-          label={{ value: 'LLM Citation Share (%)', angle: -90, position: 'insideLeft', dy: 0 }}
+          label={{ value: 'LLM Citation Share (%)', angle: -90, position: 'insideLeft', dy: 20 }}
           tick={{ fontSize: 12 }}
         />
         <ZAxis 
@@ -91,7 +91,6 @@ export const CompetitiveMarketMap: React.FC<CompetitiveMarketMapProps> = ({ data
           unit="$" 
         />
         <RechartsTooltip content={<CustomTooltip />} />
-        <Legend verticalAlign="top" align="right" />
         <Scatter 
           name="Competitors" 
           data={enhancedData} 
@@ -103,10 +102,8 @@ export const CompetitiveMarketMap: React.FC<CompetitiveMarketMapProps> = ({ data
         {enhancedData.map((entry, index) => (
           <g key={`label-${index}`}>
             <text
-              x={entry.shareOfVoice}
-              y={entry.llmCitationShare}
-              dx={0}
-              dy={30}
+              x={entry.shareOfVoice * 6 + 40}
+              y={350 - (entry.llmCitationShare * 8.5 + 20) + 25}
               textAnchor="middle"
               fill={colorMap[entry.name] || "#71717a"}
               fontSize={10}

@@ -17,17 +17,17 @@ export const PerformanceSection: React.FC<PerformanceSectionProps> = ({ data, do
   return (
     <div className="space-y-8">
       <div className="grid grid-cols-4 gap-6">
-        <Card className="bg-gradient-to-br from-primary-50 to-white">
+        <Card>
           <CardBody className="p-4">
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm text-gray-600 mb-1">Organic Sessions</p>
                 <div className="flex items-baseline gap-2">
                   <p className="text-2xl font-semibold">3.8M</p>
-                  <Badge color="success" variant="flat" className="gap-1">
+                  <span className="text-success-600 text-sm font-medium flex items-center gap-1">
                     <Icon icon="lucide:trending-up" size={14} />
-                    <span>+12.4%</span>
-                  </Badge>
+                    +12.4%
+                  </span>
                 </div>
               </div>
               <Tooltip content="Monthly organic traffic from all search engines">
@@ -49,6 +49,10 @@ export const PerformanceSection: React.FC<PerformanceSectionProps> = ({ data, do
                 <p className="text-sm text-gray-600 mb-1">Clicks</p>
                 <div className="flex items-baseline gap-2">
                   <p className="text-2xl font-semibold">2.4M</p>
+                  <span className="text-success-600 text-sm font-medium flex items-center gap-1">
+                    <Icon icon="lucide:trending-up" size={14} />
+                    +8.2%
+                  </span>
                   <Badge color="success" variant="flat" className="gap-1">
                     <Icon icon="lucide:trending-up" size={14} />
                     <span>+9.2%</span>
@@ -99,10 +103,10 @@ export const PerformanceSection: React.FC<PerformanceSectionProps> = ({ data, do
                 <p className="text-sm text-gray-600 mb-1">CTR</p>
                 <div className="flex items-baseline gap-2">
                   <p className="text-2xl font-semibold">4.8%</p>
-                  <Badge color="danger" variant="flat" className="gap-1">
+                  <span className="text-danger-600 text-sm font-medium flex items-center gap-1">
                     <Icon icon="lucide:trending-down" size={14} />
-                    <span>-0.3%</span>
-                  </Badge>
+                    -0.3%
+                  </span>
                 </div>
               </div>
               <Tooltip content="Click-through rate from search results">
@@ -119,7 +123,7 @@ export const PerformanceSection: React.FC<PerformanceSectionProps> = ({ data, do
       </div>
       
       <div className="grid grid-cols-4 gap-6 h-[160px]">
-        <Card className="bg-gradient-to-br from-blue-50 to-white">
+        <Card>
           <CardHeader className="px-4 py-3">
             <h4 className="text-base font-medium">Google</h4>
           </CardHeader>

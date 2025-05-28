@@ -23,10 +23,10 @@ export const PerformanceTab: React.FC<PerformanceTabProps> = ({ data, domain }) 
                 <p className="text-sm text-gray-600 mb-1">Organic Sessions</p>
                 <div className="flex items-baseline gap-2">
                   <p className="text-2xl font-semibold">3.8M</p>
-                  <Badge color="success" variant="flat" className="gap-1">
+                  <span className="text-success-600 text-sm font-medium flex items-center gap-1">
                     <Icon icon="lucide:trending-up" size={14} />
-                    <span>+12.4%</span>
-                  </Badge>
+                    +12.4%
+                  </span>
                 </div>
               </div>
               <Tooltip content="Monthly organic traffic from all search engines">
@@ -48,7 +48,10 @@ export const PerformanceTab: React.FC<PerformanceTabProps> = ({ data, domain }) 
                 <p className="text-sm text-gray-600 mb-1">Clicks</p>
                 <div className="flex items-baseline gap-2">
                   <p className="text-2xl font-semibold">2.4M</p>
-                  <Badge color="success" variant="flat" className="gap-1">
+                  <span className="text-success-600 text-sm font-medium flex items-center gap-1">
+                    <Icon icon="lucide:trending-up" size={14} />
+                    +8.2%
+                  </span>
                     <Icon icon="lucide:trending-up" size={14} />
                     <span>+9.2%</span>
                   </Badge>

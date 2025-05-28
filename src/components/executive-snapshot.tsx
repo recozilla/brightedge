@@ -12,7 +12,7 @@ interface ExecutiveSnapshotProps {
 export const ExecutiveSnapshot: React.FC<ExecutiveSnapshotProps> = ({ data, domain }) => {
   return (
     <div className="space-y-8 py-4">
-      <div className="flex items-center justify-end">
+      <div className="flex items-center justify-start">
         <div className="flex items-center gap-3">
           <Tooltip content="Real-time volatility: Moderate (23% above baseline)">
             <Badge color="warning" variant="flat" className="cursor-help">

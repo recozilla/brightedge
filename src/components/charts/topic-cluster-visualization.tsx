@@ -23,7 +23,7 @@ export const TopicClusterVisualization: React.FC = () => {
         {/* Endpoint Security Cluster - Top Right */}
         <div className="absolute top-[15%] right-[20%]">
           <div className="w-24 h-24 rounded-full bg-primary-50 border-2 border-primary-300 flex items-center justify-center shadow-sm">
-            <div className="text-center">
+            <div className="text-center flex flex-col items-center justify-center">
               <Icon icon="lucide:laptop" className="text-primary-500 text-2xl mb-1" />
               <div className="text-sm font-medium">Endpoint Security</div>
             </div>
@@ -40,7 +40,7 @@ export const TopicClusterVisualization: React.FC = () => {
         {/* Zero Trust Cluster - Top Left */}
         <div className="absolute top-[15%] left-[20%]">
           <div className="w-24 h-24 rounded-full bg-secondary-50 border-2 border-secondary-300 flex items-center justify-center shadow-sm">
-            <div className="text-center">
+            <div className="text-center flex flex-col items-center justify-center">
               <Icon icon="lucide:lock" className="text-secondary-500 text-2xl mb-1" />
               <div className="text-sm font-medium">Zero Trust</div>
             </div>
@@ -57,7 +57,7 @@ export const TopicClusterVisualization: React.FC = () => {
         {/* IoT Security Cluster - Bottom Left */}
         <div className="absolute bottom-[15%] left-[20%]">
           <div className="w-24 h-24 rounded-full bg-success-50 border-2 border-success-300 flex items-center justify-center shadow-sm">
-            <div className="text-center">
+            <div className="text-center flex flex-col items-center justify-center">
               <Icon icon="lucide:wifi" className="text-success-500 text-2xl mb-1" />
               <div className="text-sm font-medium">IoT Security</div>
             </div>
@@ -74,7 +74,7 @@ export const TopicClusterVisualization: React.FC = () => {
         {/* Cloud Security Cluster - Bottom Right */}
         <div className="absolute bottom-[15%] right-[20%]">
           <div className="w-24 h-24 rounded-full bg-warning-50 border-2 border-warning-300 flex items-center justify-center shadow-sm">
-            <div className="text-center">
+            <div className="text-center flex flex-col items-center justify-center">
               <Icon icon="lucide:cloud" className="text-warning-500 text-2xl mb-1" />
               <div className="text-sm font-medium">Cloud Security</div>
             </div>
@@ -94,10 +94,6 @@ export const TopicClusterVisualization: React.FC = () => {
           <div className="flex items-center gap-1 text-xs">
             <div className="w-2 h-2 rounded-full bg-primary-500"></div>
             <span>Search Volume</span>
-          </div>
-          <div className="flex items-center gap-1 text-xs">
-            <div className="w-3 h-3 rounded-full border border-dashed border-gray-300"></div>
-            <span>Topic Relationship</span>
           </div>
         </div>
       </div>

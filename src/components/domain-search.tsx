@@ -45,7 +45,7 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
             </div>
             <div className="h-7 w-px bg-gray-200"></div>
           </div>
-          
+
           <form onSubmit={handleSubmit} className="flex-1 max-w-xl mx-4">
             <div className="relative">
               <label htmlFor="domain-input" className="block text-sm font-medium text-gray-700 mb-1">
@@ -72,7 +72,7 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
                 className="w-full"
                 isDisabled={isLoading}
               />
-              
+
               {!isLoading && inputValue && (
                 <div className="absolute top-full left-0 right-0 bg-white shadow-md rounded-b-md border border-gray-200 mt-1 z-20">
                   {suggestions
@@ -95,7 +95,7 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
               )}
             </div>
           </form>
-          
+
           <div className="flex items-center gap-3">
             <Button
               color="primary"
@@ -106,7 +106,7 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
             </Button>
           </div>
         </div>
-        
+
         {isLoading && (
           <Card className="mt-4 p-4">
             <div className="text-center mb-2 font-medium">Processing domain data...</div>

@@ -3,6 +3,7 @@ import { Card, CardBody, CardHeader, Tooltip, Badge } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { TrafficTrendChart } from "./charts/traffic-trend-chart";
 import { DomainData } from "../types/domain-data";
+import { SessionsRevenueRankings } from "./sessions-revenue-rankings";
 
 interface CurrentPerformanceSnapshotProps {
   data: DomainData;
@@ -12,7 +13,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
   return (
     <div>
       <h3 className="text-lg font-semibold mb-4">Current Performance</h3>
-      
+
       <div className="grid grid-cols-4 gap-6 mb-6">
         <Card>
           <CardBody className="p-4">
@@ -38,7 +39,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
             </p>
           </CardBody>
         </Card>
-        
+
         <Card>
           <CardBody className="p-4">
             <div className="flex justify-between items-start">
@@ -63,7 +64,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
             </p>
           </CardBody>
         </Card>
-        
+
         <Card>
           <CardBody className="p-4">
             <div className="flex justify-between items-start">
@@ -88,7 +89,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
             </p>
           </CardBody>
         </Card>
-        
+
         <Card>
           <CardBody className="p-4">
             <div className="flex justify-between items-start">
@@ -114,7 +115,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
           </CardBody>
         </Card>
       </div>
-      
+
       <div className="grid grid-cols-1 gap-6 mb-6">
         <Card>
           <CardHeader className="px-6 py-4">
@@ -142,7 +143,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
           </CardBody>
         </Card>
       </div>
-      
+
       <div className="grid grid-cols-4 gap-6">
         <Card>
           <CardHeader className="px-4 py-3">
@@ -167,7 +168,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
             </div>
           </CardBody>
         </Card>
-        
+
         <Card>
           <CardHeader className="px-4 py-3">
             <h4 className="text-base font-medium">TikTok / Instagram</h4>
@@ -191,7 +192,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
             </div>
           </CardBody>
         </Card>
-        
+
         <Card>
           <CardHeader className="px-4 py-3">
             <h4 className="text-base font-medium">YouTube</h4>
@@ -215,7 +216,7 @@ export const CurrentPerformanceSnapshot: React.FC<CurrentPerformanceSnapshotProp
             </div>
           </CardBody>
         </Card>
-        
+
         <Card>
           <CardHeader className="px-4 py-3">
             <h4 className="text-base font-medium">ChatGPT</h4>
