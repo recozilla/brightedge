@@ -229,7 +229,8 @@ export const SessionsRevenueRankings: React.FC = () => {
     return "lucide:minus";
   };
 
-  const currentData = viewMode === "product" ? mockProductData : mockCountryData;
+  const currentData =
+    viewMode === "product" ? mockProductData : mockCountryData;
 
   return (
     <Card>
@@ -277,7 +278,9 @@ export const SessionsRevenueRankings: React.FC = () => {
               {currentData.map((row, index) => (
                 <tr key={`${viewMode}-${index}`} className="hover:bg-gray-50">
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {viewMode === "product" ? (row as ProductData).product : (row as CountryData).country}
+                    {viewMode === "product"
+                      ? (row as ProductData).product
+                      : (row as CountryData).country}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     <div className="flex items-center gap-2">
