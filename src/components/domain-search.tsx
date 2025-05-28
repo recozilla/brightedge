@@ -40,18 +40,21 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="text-primary-500 font-bold text-2xl">
-              BrightEdge
-            </div>
+            <img 
+              src="https://www.brightedge.com/sites/default/files/2023-07/brightedge-logo.svg" 
+              alt="BrightEdge" 
+              className="h-8"
+            />
             <div className="h-7 w-px bg-gray-200"></div>
           </div>
 
           <form onSubmit={handleSubmit} className="flex-1 max-w-xl mx-4">
-            <div className="relative">
-              <label htmlFor="domain-input" className="block text-sm font-medium text-gray-700 mb-1">
+            <div className="relative flex items-center gap-3">
+              <label htmlFor="domain-input" className="text-sm font-medium text-gray-700 whitespace-nowrap">
                 Enter Domain
               </label>
-              <Input
+              <div className="flex-1 relative">
+                <Input
                 id="domain-input"
                 type="text"
                 placeholder="Enter domain (e.g., example.com)"
@@ -70,10 +73,10 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
                   </Button>
                 }
                 className="w-full"
-                isDisabled={isLoading}
-              />
+                  isDisabled={isLoading}
+                />
 
-              {!isLoading && inputValue && (
+                {!isLoading && inputValue && (
                 <div className="absolute top-full left-0 right-0 bg-white shadow-md rounded-b-md border border-gray-200 mt-1 z-20">
                   {suggestions
                     .filter(s => s.includes(inputValue.toLowerCase()) && s !== inputValue.toLowerCase())
@@ -90,9 +93,10 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
                         {suggestion}
                       </div>
                     ))
-                  }
-                </div>
-              )}
+                    }
+                  </div>
+                )}
+              </div>
             </div>
           </form>
 
