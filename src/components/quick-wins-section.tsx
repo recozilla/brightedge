@@ -337,7 +337,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
-              <h4 className="text-base font-medium">Autopilot Quick-Win</h4>
+              <h4 className="text-base font-medium">Growth Upside</h4>
               <Badge color="success" variant="flat">$280K in 90d</Badge>
             </div>
             <div className="flex items-center gap-2">
