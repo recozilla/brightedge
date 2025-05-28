@@ -51,7 +51,10 @@ const mockProductData: ProductData[] = [
   { product: "Internet Security", sessions: 524697, sessionsChange: 22.1, revenue: 198432, revenueChange: 25.8, avgRanking: 18.3, rankingChange: 3 },
   { product: "Mobile Security", sessions: 346938, sessionsChange: 18.9, revenue: 125674, revenueChange: 21.3, avgRanking: 21.2, rankingChange: 2 },
   { product: "Safe Connect VPN", sessions: 289156, sessionsChange: 35.4, revenue: 98234, revenueChange: 42.1, avgRanking: 24.8, rankingChange: 5 },
-  { product: "Small Business", sessions: 187423, sessionsChange: 6.7, revenue: 156789, revenueChange: 8.9, avgRanking: 19.5, rankingChange: 0 }
+  { product: "Small Business Security", sessions: 187423, sessionsChange: 6.7, revenue: 156789, revenueChange: 8.9, avgRanking: 19.5, rankingChange: 0 },
+  { product: "Endpoint Protection", sessions: 142356, sessionsChange: 28.3, revenue: 98765, revenueChange: 31.2, avgRanking: 22.1, rankingChange: 4 },
+  { product: "WebAdvisor", sessions: 98234, sessionsChange: 5.4, revenue: 45123, revenueChange: 7.8, avgRanking: 26.3, rankingChange: -1 },
+  { product: "Secure File Shredder", sessions: 76543, sessionsChange: 12.1, revenue: 34567, revenueChange: 15.6, avgRanking: 28.9, rankingChange: 2 }
 ];
 
 const mockCountryData: CountryData[] = [
@@ -59,12 +62,16 @@ const mockCountryData: CountryData[] = [
   { country: "United Kingdom", sessions: 423789, sessionsChange: 18.7, revenue: 189432, revenueChange: 22.1, avgRanking: 12.8, rankingChange: 2 },
   { country: "Canada", sessions: 298654, sessionsChange: 11.2, revenue: 134567, revenueChange: 13.5, avgRanking: 11.5, rankingChange: 1 },
   { country: "Australia", sessions: 256187, sessionsChange: 25.6, revenue: 112890, revenueChange: 28.9, avgRanking: 14.2, rankingChange: 3 },
-  { country: "Germany", sessions: 198732, sessionsChange: 8.9, revenue: 89456, revenueChange: 10.3, avgRanking: 16.7, rankingChange: 0 }
+  { country: "Germany", sessions: 198732, sessionsChange: 8.9, revenue: 89456, revenueChange: 10.3, avgRanking: 16.7, rankingChange: 0 },
+  { country: "Japan", sessions: 187654, sessionsChange: 19.4, revenue: 76543, revenueChange: 23.7, avgRanking: 15.3, rankingChange: 2 },
+  { country: "France", sessions: 156789, sessionsChange: 7.6, revenue: 67891, revenueChange: 9.2, avgRanking: 17.8, rankingChange: -1 },
+  { country: "India", sessions: 134567, sessionsChange: 32.1, revenue: 45678, revenueChange: 38.4, avgRanking: 19.6, rankingChange: 4 },
+  { country: "Brazil", sessions: 123456, sessionsChange: 15.8, revenue: 43210, revenueChange: 18.9, avgRanking: 20.1, rankingChange: 1 },
+  { country: "Netherlands", sessions: 98765, sessionsChange: 13.2, revenue: 39876, revenueChange: 16.5, avgRanking: 18.4, rankingChange: 2 }
 ];
 
 export const SessionsRevenueRankings: React.FC = () => {
   const [viewMode, setViewMode] = useState<'keyword' | 'product' | 'country'>('keyword');
-  const displayData = mockSessionsData;
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
