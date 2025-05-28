@@ -41,9 +41,12 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
-              src="https://www.brightedge.com/sites/default/files/2023-07/brightedge-logo.svg" 
+              src="/brightedge-logo.png" 
               alt="BrightEdge" 
               className="h-8"
+              onError={(e) => {
+                e.currentTarget.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMjAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMCIgeT0iMjgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMyQTlERkYiPkJSSUdIVEVER0U8L3RleHQ+Cjwvc3ZnPgo=";
+              }}
             />
             <div className="h-7 w-px bg-gray-200"></div>
           </div>
