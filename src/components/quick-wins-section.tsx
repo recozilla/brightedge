@@ -10,7 +10,7 @@ interface QuickWinsSectionProps {
 
 export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain }) => {
   const [autopilotEnabled, setAutopilotEnabled] = React.useState(false);
-  
+
   return (
     <div className="space-y-8">
       <Card className="bg-gradient-to-br from-success-50 to-white">
@@ -45,7 +45,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
               These keywords rank just off page 1 (positions 11-20) and have high search volume. Improving these positions can yield significant traffic and revenue gains.
             </p>
           </div>
-          
+
           <Table 
             removeWrapper 
             aria-label="Rank-11 Penalty Keywords"
@@ -169,7 +169,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
               </TableRow>
             </TableBody>
           </Table>
-          
+
           <div className="flex justify-center mt-4">
             <Button variant="light" color="primary">
               View All 312 Keywords
@@ -177,7 +177,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
           </div>
         </CardBody>
       </Card>
-      
+
       <Card className="bg-gradient-to-br from-blue-50 to-white">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
@@ -200,7 +200,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
               These are featured snippets where competitors currently own the position, but your page ranks in the top 5. With content optimization, you can capture these high-visibility positions.
             </p>
           </div>
-          
+
           <Table 
             removeWrapper 
             aria-label="Snippets to Steal"
@@ -324,7 +324,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
               </TableRow>
             </TableBody>
           </Table>
-          
+
           <div className="flex justify-center mt-4">
             <Button variant="light" color="primary">
               View All 18 Opportunities
@@ -332,8 +332,8 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
           </div>
         </CardBody>
       </Card>
-      
-      <Card className="bg-gradient-to-br from-warning-50 to-white">
+
+      <Card className="bg-white border border-gray-200">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
@@ -356,7 +356,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
               These pages are safe for automated optimization with BrightEdge Autopilot. Activate to automatically improve meta tags, schema markup, and content recommendations.
             </p>
           </div>
-          
+
           <div className="bg-gray-50 rounded-lg p-6 mb-6">
             <div className="flex items-center justify-between mb-4">
               <div>
@@ -367,11 +367,11 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
                 $280,000
               </div>
             </div>
-            
+
             <div className="h-8 bg-gray-200 rounded-full overflow-hidden mb-2">
               <div className="h-full bg-success-500 rounded-full" style={{ width: autopilotEnabled ? "15%" : "0%" }}></div>
             </div>
-            
+
             <div className="flex justify-between text-xs text-gray-600">
               <span>Today</span>
               <span>30 days</span>
@@ -379,7 +379,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
               <span>90 days</span>
             </div>
           </div>
-          
+
           <Table 
             removeWrapper 
             aria-label="Autopilot Pages"
@@ -487,7 +487,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
               </TableRow>
             </TableBody>
           </Table>
-          
+
           <div className="flex justify-center mt-4">
             <Button variant="light" color="primary">
               View All 42 Pages

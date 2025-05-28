@@ -165,7 +165,7 @@ export const StrategicBetsSection: React.FC<StrategicBetsSectionProps> = ({ data
         </CardBody>
       </Card>
       
-      <Card className="bg-gradient-to-br from-secondary-50 to-white">
+      <Card className="bg-white border border-gray-200">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-2">

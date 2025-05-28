@@ -11,7 +11,7 @@ interface MediumTermPlaysSectionProps {
 export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ data, domain }) => {
   return (
     <div className="space-y-8">
-      <Card className="bg-gradient-to-br from-warning-50 to-white">
+      <Card className="bg-white border border-gray-200">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
@@ -43,7 +43,7 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
               These pages have experienced significant traffic decay year-over-year and require content updates to recover lost rankings and traffic.
             </p>
           </div>
-          
+
           <Table 
             removeWrapper 
             aria-label="Content Refresh Queue"
@@ -227,7 +227,7 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
               </TableRow>
             </TableBody>
           </Table>
-          
+
           <div className="flex justify-center mt-4">
             <Button variant="light" color="primary">
               View All 24 Pages
@@ -235,8 +235,8 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
           </div>
         </CardBody>
       </Card>
-      
-      <Card className="bg-gradient-to-br from-primary-50 to-white">
+
+      <Card className="bg-white border border-gray-200">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
@@ -258,7 +258,7 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
               AI-generated linking plan across feature pages & blogs to improve internal link structure and boost rankings for key pages.
             </p>
           </div>
-          
+
           <Table 
             removeWrapper 
             aria-label="Internal Link Opportunities"
@@ -462,7 +462,7 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
               </TableRow>
             </TableBody>
           </Table>
-          
+
           <div className="flex justify-center mt-4">
             <Button variant="light" color="primary">
               View All 86 Opportunities
@@ -470,8 +470,8 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
           </div>
         </CardBody>
       </Card>
-      
-      <Card className="bg-gradient-to-br from-blue-50 to-white">
+
+      <Card className="bg-white border border-gray-200">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
@@ -493,7 +493,7 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
               Top referring domains that your competitors have but you don't. These represent valuable backlink acquisition opportunities.
             </p>
           </div>
-          
+
           <Table 
             removeWrapper 
             aria-label="Backlink Gap"
@@ -652,7 +652,7 @@ export const MediumTermPlaysSection: React.FC<MediumTermPlaysSectionProps> = ({ 
               </TableRow>
             </TableBody>
           </Table>
-          
+
           <div className="flex justify-center mt-4">
             <Button variant="light" color="primary">
               View All 38 Domains
