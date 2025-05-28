@@ -36,14 +36,14 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
   };
 
   return (
-    <div className="bg-gradient-to-r from-primary-50 to-white border-b border-gray-200 py-5 px-6 sticky top-0 z-10">
+    <div className="bg-gradient-to-r from-primary-50 to-white border-b border-gray-200 py-5 px-6 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <img 
               src="/brightedge-logo.png" 
               alt="BrightEdge" 
-              className="h-8"
+              className="h-10"
               onError={(e) => {
                 e.currentTarget.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjQwIiB2aWV3Qm94PSIwIDAgMjAwIDQwIiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8dGV4dCB4PSIxMCIgeT0iMjgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMyQTlERkYiPkJSSUdIVEVER0U8L3RleHQ+Cjwvc3ZnPgo=";
               }}
