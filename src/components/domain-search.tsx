@@ -52,8 +52,8 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
           </div>
 
           <form onSubmit={handleSubmit} className="flex-1 max-w-xl mx-4">
-            <div className="relative flex items-center gap-3">
-              <label htmlFor="domain-input" className="text-sm font-medium text-gray-700 whitespace-nowrap">
+            <div className="relative flex items-center gap-4">
+              <label htmlFor="domain-input" className="text-base font-semibold text-gray-800 whitespace-nowrap tracking-wide">
                 Enter Domain
               </label>
               <div className="flex-1 relative">
@@ -75,8 +75,10 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
                     <Icon icon="lucide:search" />
                   </Button>
                 }
-                className="w-full"
-                  isDisabled={isLoading}
+                className="w-full border-2 border-gray-200 hover:border-primary-300 focus-within:border-primary-500 transition-colors"
+                variant="bordered"
+                radius="lg"
+                isDisabled={isLoading}
                 />
 
                 {!isLoading && inputValue && (

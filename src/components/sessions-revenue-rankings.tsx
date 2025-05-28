@@ -26,7 +26,7 @@ const mockSessionsData: SessionData[] = [
 
 export const SessionsRevenueRankings: React.FC = () => {
   const [showAll, setShowAll] = useState(false);
-  const displayData = showAll ? mockSessionsData : mockSessionsData.slice(0, 5);
+  const displayData = mockSessionsData;
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
@@ -101,18 +101,7 @@ export const SessionsRevenueRankings: React.FC = () => {
               ))}
             </tbody>
           </table>
-          {!showAll && mockSessionsData.length > 5 && (
-            <div className="px-6 py-4 border-t border-gray-200 text-center">
-              <Button 
-                variant="light" 
-                color="primary" 
-                onClick={() => setShowAll(true)}
-                className="text-sm"
-              >
-                View all ({mockSessionsData.length - 5} more)
-              </Button>
-            </div>
-          )}
+          
         </div>
       </CardBody>
     </Card>

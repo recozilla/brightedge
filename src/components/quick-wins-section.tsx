@@ -13,7 +13,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
 
   return (
     <div className="space-y-8">
-      <Card className="bg-gradient-to-br from-success-50 to-white">
+      <Card className="bg-white border border-gray-200">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
@@ -178,7 +178,7 @@ export const QuickWinsSection: React.FC<QuickWinsSectionProps> = ({ data, domain
         </CardBody>
       </Card>
 
-      <Card className="bg-gradient-to-br from-blue-50 to-white">
+      <Card className="bg-white border border-gray-200">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center gap-3">
