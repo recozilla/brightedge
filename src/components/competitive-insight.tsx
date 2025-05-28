@@ -13,8 +13,6 @@ interface CompetitiveInsightProps {
 export const CompetitiveInsight: React.FC<CompetitiveInsightProps> = ({ data, domain }) => {
   return (
     <div>
-      <h3 className="text-lg font-semibold mb-4 text-primary-700">Competitive Insight</h3>
-      
       <div className="grid grid-cols-3 gap-6 mb-6">
         <Card className="bg-gradient-to-br from-primary-50 to-white">
           <CardBody className="p-4">

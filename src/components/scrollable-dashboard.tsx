@@ -1,12 +1,11 @@
 import React from "react";
-import { Divider } from "@heroui/react";
+import { Divider, Badge, Tooltip } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { ExecutiveSnapshot } from "./executive-snapshot";
 import { PerformanceSection } from "./performance-section";
 import { QuickWinsSection } from "./quick-wins-section";
 import { MediumTermPlaysSection } from "./medium-term-plays-section";
 import { StrategicBetsSection } from "./strategic-bets-section";
-import { TopPerformingKeywords } from "./top-performing-keywords";
 import { DomainData } from "../types/domain-data";
 
 interface ScrollableDashboardProps {
