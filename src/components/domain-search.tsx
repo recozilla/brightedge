@@ -75,8 +75,8 @@ export const DomainSearch: React.FC<DomainSearchProps> = ({
                     <Icon icon="lucide:search" />
                   </Button>
                 }
-                className="w-full border-2 border-gray-200 hover:border-primary-300 focus-within:border-primary-500 transition-colors"
-                variant="bordered"
+                className="w-full bg-white shadow-sm hover:shadow-md focus-within:shadow-md transition-shadow border-0"
+                variant="flat"
                 radius="lg"
                 isDisabled={isLoading}
                 />
