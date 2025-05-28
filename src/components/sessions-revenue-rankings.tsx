@@ -209,9 +209,7 @@ const mockCountryData: CountryData[] = [
 ];
 
 export const SessionsRevenueRankings: React.FC = () => {
-  const [viewMode, setViewMode] = useState<"product" | "country">(
-    "product",
-  );
+  const [viewMode, setViewMode] = useState<"product" | "country">("product");
 
   const formatNumber = (num: number) => {
     if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
@@ -230,6 +228,8 @@ export const SessionsRevenueRankings: React.FC = () => {
     if (change < 0) return "lucide:trending-down";
     return "lucide:minus";
   };
+
+  const currentData = viewMode === "product" ? mockProductData : mockCountryData;
 
   return (
     <Card>
@@ -255,14 +255,12 @@ export const SessionsRevenueRankings: React.FC = () => {
         </div>
       </CardHeader>
       <CardBody className="p-0">
-        <div className="max-h-80 overflow-auto">
-          <table className="w-full table-auto">
-            <thead className="bg-gray-50 sticky top-0">
+        <div className="overflow-auto">
+          <table className="w-full">
+            <thead className="bg-gray-50">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  {viewMode === "product"
-                      ? "Product"
-                      : "Country"}
+                  {viewMode === "product" ? "Product" : "Country"}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Sessions
@@ -276,118 +274,61 @@ export const SessionsRevenueRankings: React.FC = () => {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {viewMode === "product" &&
-                mockProductData.map((row, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {row.product}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <div className="flex items-center gap-2">
-                        <span>{formatNumber(row.sessions)}</span>
-                        <span
-                          className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(row.sessionsChange)}`}
-                        >
-                          <Icon
-                            icon={getChangeIcon(row.sessionsChange)}
-                            width={12}
-                            height={12}
-                          />
-                          {row.sessionsChange > 0 ? "+" : ""}
-                          {row.sessionsChange}%
-                        </span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <div className="flex items-center gap-2">
-                        <span>${formatNumber(row.revenue)}</span>
-                        <span
-                          className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(row.revenueChange)}`}
-                        >
-                          <Icon
-                            icon={getChangeIcon(row.revenueChange)}
-                            width={12}
-                            height={12}
-                          />
-                          {row.revenueChange > 0 ? "+" : ""}
-                          {row.revenueChange}%
-                        </span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <div className="flex items-center gap-2">
-                        <span>#{row.avgRanking}</span>
-                        <span
-                          className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(-row.rankingChange)}`}
-                        >
-                          <Icon
-                            icon={getChangeIcon(-row.rankingChange)}
-                            width={12}
-                            height={12}
-                          />
-                          {row.rankingChange > 0 ? "+" : ""}
-                          {row.rankingChange}
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              {viewMode === "country" &&
-                mockCountryData.map((row, index) => (
-                  <tr key={index} className="hover:bg-gray-50">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      {row.country}
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <div className="flex items-center gap-2">
-                        <span>{formatNumber(row.sessions)}</span>
-                        <span
-                          className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(row.sessionsChange)}`}
-                        >
-                          <Icon
-                            icon={getChangeIcon(row.sessionsChange)}
-                            width={12}
-                            height={12}
-                          />
-                          {row.sessionsChange > 0 ? "+" : ""}
-                          {row.sessionsChange}%
-                        </span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <div className="flex items-center gap-2">
-                        <span>${formatNumber(row.revenue)}</span>
-                        <span
-                          className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(row.revenueChange)}`}
-                        >
-                          <Icon
-                            icon={getChangeIcon(row.revenueChange)}
-                            width={12}
-                            height={12}
-                          />
-                          {row.revenueChange > 0 ? "+" : ""}
-                          {row.revenueChange}%
-                        </span>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <div className="flex items-center gap-2">
-                        <span>#{row.avgRanking}</span>
-                        <span
-                          className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(-row.rankingChange)}`}
-                        >
-                          <Icon
-                            icon={getChangeIcon(-row.rankingChange)}
-                            width={12}
-                            height={12}
-                          />
-                          {row.rankingChange > 0 ? "+" : ""}
-                          {row.rankingChange}
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+              {currentData.map((row, index) => (
+                <tr key={`${viewMode}-${index}`} className="hover:bg-gray-50">
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {viewMode === "product" ? (row as ProductData).product : (row as CountryData).country}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <div className="flex items-center gap-2">
+                      <span>{formatNumber(row.sessions)}</span>
+                      <span
+                        className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(row.sessionsChange)}`}
+                      >
+                        <Icon
+                          icon={getChangeIcon(row.sessionsChange)}
+                          width={12}
+                          height={12}
+                        />
+                        {row.sessionsChange > 0 ? "+" : ""}
+                        {row.sessionsChange}%
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <div className="flex items-center gap-2">
+                      <span>${formatNumber(row.revenue)}</span>
+                      <span
+                        className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(row.revenueChange)}`}
+                      >
+                        <Icon
+                          icon={getChangeIcon(row.revenueChange)}
+                          width={12}
+                          height={12}
+                        />
+                        {row.revenueChange > 0 ? "+" : ""}
+                        {row.revenueChange}%
+                      </span>
+                    </div>
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <div className="flex items-center gap-2">
+                      <span>#{row.avgRanking}</span>
+                      <span
+                        className={`text-xs font-medium flex items-center gap-1 ${getChangeColor(-row.rankingChange)}`}
+                      >
+                        <Icon
+                          icon={getChangeIcon(-row.rankingChange)}
+                          width={12}
+                          height={12}
+                        />
+                        {row.rankingChange > 0 ? "+" : ""}
+                        {row.rankingChange}
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
