@@ -10,7 +10,10 @@ interface CompetitiveInsightProps {
   domain: string;
 }
 
-export const CompetitiveInsight: React.FC<CompetitiveInsightProps> = ({ data, domain }) => {
+export const CompetitiveInsight: React.FC<CompetitiveInsightProps> = ({
+  data,
+  domain,
+}) => {
   return (
     <div>
       <div className="grid grid-cols-3 gap-6 mb-6">
@@ -38,12 +41,12 @@ export const CompetitiveInsight: React.FC<CompetitiveInsightProps> = ({ data, do
             </p>
           </CardBody>
         </Card>
-        
+
         <Card className="bg-gradient-to-br from-success-50 to-white">
           <CardBody className="p-4">
             <div className="flex justify-between items-start">
               <div>
-                <p className="text-sm text-gray-600 mb-1">Quick Growth Upside</p>
+                <p className="text-sm text-gray-600 mb-1">Growth Upside</p>
                 <div className="flex items-baseline gap-2">
                   <p className="text-2xl font-semibold">$4.2M</p>
                   <span className="text-xs text-gray-500">per year</span>
@@ -60,14 +63,16 @@ export const CompetitiveInsight: React.FC<CompetitiveInsightProps> = ({ data, do
             </p>
           </CardBody>
         </Card>
-        
+
         <Card className="bg-gradient-to-br from-secondary-50 to-white">
           <CardBody className="p-4">
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm text-gray-600 mb-1">LLM Citation Share</p>
                 <div className="flex items-baseline gap-2">
-                  <p className="text-2xl font-semibold">{data.llmCitationShare}%</p>
+                  <p className="text-2xl font-semibold">
+                    {data.llmCitationShare}%
+                  </p>
                   <Badge color="danger" variant="flat" className="gap-1">
                     <Icon icon="lucide:trending-down" size={14} />
                     <span>-1.7%</span>
@@ -86,7 +91,7 @@ export const CompetitiveInsight: React.FC<CompetitiveInsightProps> = ({ data, do
           </CardBody>
         </Card>
       </div>
-      
+
       <Card className="mb-6">
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
@@ -102,7 +107,7 @@ export const CompetitiveInsight: React.FC<CompetitiveInsightProps> = ({ data, do
           <CompetitiveMarketMap data={data.competitiveData} domain={domain} />
         </CardBody>
       </Card>
-      
+
       <Card>
         <CardHeader className="px-6 py-4">
           <div className="flex justify-between items-center w-full">
