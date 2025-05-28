@@ -99,20 +99,31 @@ export const CompetitiveMarketMap: React.FC<CompetitiveMarketMapProps> = ({ data
         />
         
         {/* Add company name labels */}
-        {enhancedData.map((entry, index) => (
-          <g key={`label-${index}`}>
-            <text
-              x={entry.shareOfVoice * 6 + 40}
-              y={350 - (entry.llmCitationShare * 8.5 + 20) + 25}
-              textAnchor="middle"
-              fill={colorMap[entry.name] || "#71717a"}
-              fontSize={10}
-              fontWeight="bold"
-            >
-              {entry.name.split('.')[0]}
-            </text>
-          </g>
-        ))}
+        {enhancedData.map((entry, index) => {
+          // Calculate position based on chart dimensions and scales
+          const chartWidth = 100; // percentage width of chart area
+          const chartHeight = 100; // percentage height of chart area
+          const xScale = chartWidth / 40; // 40 is the domain max for x-axis
+          const yScale = chartHeight / 35; // 35 is the domain max for y-axis
+          
+          const xPos = (entry.shareOfVoice * xScale) + 10; // 10% offset from left
+          const yPos = 90 - (entry.llmCitationShare * yScale); // 90% from top, inverted
+          
+          return (
+            <g key={`label-${index}`}>
+              <text
+                x={`${xPos}%`}
+                y={`${yPos + 8}%`}
+                textAnchor="middle"
+                fill={colorMap[entry.name] || "#71717a"}
+                fontSize={11}
+                fontWeight="600"
+              >
+                {entry.name.split('.')[0]}
+              </text>
+            </g>
+          );
+        })}
       </ScatterChart>
     </ResponsiveContainer>
   );
